@@ -1,0 +1,20 @@
+# 首次加入时执行的命令列表（按顺序执行）
+# 每条命令支持三种前缀指定执行者：
+#   console: 以控制台身份执行（默认）
+#   op:      临时赋予玩家 OP 权限后以玩家身份执行
+#   player:  以玩家自身权限执行
+#
+# 支持 PlaceholderAPI 占位符（如 %player_name%）
+# 也保留自定义占位符 {player} 以便兼容
+#
+# 示例：
+# first-join-commands:
+#   - "console:say 欢迎 %player_name% 来到服务器！"
+#   - "console:give %player_name% diamond 1"
+#   - "player:me Hello"
+#
+# 向后兼容：若仍使用旧字段 first-join-command（字符串），插件会自动将其作为单条命令处理。
+first-join-commands:
+  - "console:say 欢迎 %player_name%！请前往 /warp tutorial 开始冒险。"
+  - "console:give %player_name% diamond 1"
+  - "player:me Hello"
