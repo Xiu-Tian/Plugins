@@ -1,0 +1,45 @@
+# 多世界随机传送配置
+worlds:
+  world:
+    radius: 1000
+  world_nether:
+    radius: 500
+  world_the_end:
+    radius: 2000
+
+# 最大重试次数
+max-retries: 10
+
+# 每次尝试之间的延迟（单位：刻，20刻 = 1秒）
+retry-delay-ticks: 20
+
+# ========== 重试音效配置 ==========
+# 音效名称（使用原版音效，不区分大小写）
+retry-sound: "ENTITY_EXPERIENCE_ORB_PICKUP"
+# 音量 (0.0 ~ 1.0)
+retry-sound-volume: 1.0
+# 音调 (0.5 ~ 2.0)
+retry-sound-pitch: 1.0
+
+# ================= 自定义消息 =================
+messages:
+  prefix: "&6[随机传送] &r"
+  teleport-success: "{prefix}&a你已传送至世界 {world} 的 ({x}, {y}, {z})"
+  teleport-fail: "{prefix}&c在 {world} 找不到安全的地面位置（已尝试 {attempts} 次）。"
+  no-permission: "{prefix}&c你没有权限执行此操作。"
+  player-only: "{prefix}&c此命令只能由玩家执行！"
+  world-not-exist: "{prefix}&c世界 '{world}' 未加载或不存在！"
+  world-not-configured: "{prefix}&c未知的世界 '{world}'。可用世界请使用 /rtp list 查看。"
+  no-worlds-configured: "{prefix}&c没有配置任何世界，请管理员检查配置。"
+  reload-success: "{prefix}&a配置已重新加载！当前可用世界数：{count}"
+  list-header: "{prefix}&6=== 可用世界列表 ==="
+  list-entry: "&7- {world} &8(半径: {radius})"
+  error-occurred: "{prefix}&c传送过程中发生错误：{error}"
+  retry-attempt: "{prefix}&e正在尝试第 {attempt}/{max} 次..."
+  help: |
+    {prefix}&6=== 随机传送命令帮助 ===
+    &e/rtp &7- 随机传送至已配置的某个世界
+    &e/rtp <世界名> &7- 传送到指定的配置世界
+    &e/rtp list &7- 查看所有可用世界及其半径
+    &e/rtp reload &7- 重新加载配置文件 (需权限)
+    &e/rtp help &7- 显示此帮助信息
