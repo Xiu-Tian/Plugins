@@ -1,0 +1,14 @@
+# 占位符扩展标识符（推荐 dp）
+identifier: "dp"
+
+# 存储类型: yaml 或 mysql
+storage-type: "yaml"
+
+# MySQL 配置（仅当 storage-type 为 mysql 时生效）
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "minecraft"
+  username: "root"
+  password: "password"
+  table: "player_data"
