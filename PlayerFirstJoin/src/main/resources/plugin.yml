@@ -1,7 +1,0 @@
-name: PlayerFirstJoin
-version: '1.0-SNAPSHOT'
-main: org.SuperMan.playerFirstJoin.PlayerFirstJoin
-api-version: '1.21'
-author: FixSky
-description: 首次加入执行自定义命令，支持 PlaceholderAPI 和多种执行者模式。
-softdepend: [PlaceholderAPI]
